@@ -11,6 +11,17 @@ Execute our install script:
 curl -sSLf https://raw.githubusercontent.com/kubara-io/kubara/refs/heads/main/install.sh | sh
 ```
 
+## Docker container
+
+```bash
+docker run --rm \
+  -u $(id -u):$(id -g) \
+  -v ~/.kube/config:/kubeconfig:ro \
+  -v $(pwd):/workspace \
+  -w /workspace \
+  ghcr.io/kubara/kubara/kubara <your-command>
+```
+
 ## Download Release Assets
 
 Get binaries from:
